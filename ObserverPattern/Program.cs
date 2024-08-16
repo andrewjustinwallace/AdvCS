@@ -1,0 +1,150 @@
+﻿using System;
+using System.Collections.Generic;
+
+// Weather data
+public class WeatherData
+{
+    public float Temperature { get; set; }
+    public float Humidity { get; set; }
+    public float Pressure { get; set; }
+}
+
+// Traditional Event-based Subject
+public class WeatherStation
+{
+    private WeatherData _weatherData = new WeatherData();
+
+    // Define the event
+    public event EventHandler<WeatherData>? WeatherChanged;
+
+    public void SetMeasurements(float temperature, float humidity, float pressure)
+    {
+        _weatherData.Temperature = temperature;
+        _weatherData.Humidity = humidity;
+        _weatherData.Pressure = pressure;
+        OnWeatherChanged();
+    }
+
+    protected virtual void OnWeatherChanged()
+    {
+        WeatherChanged?.Invoke(this, _weatherData);
+    }
+}
+
+// Traditional Event-based Observer
+public class CurrentConditionsDisplay
+{
+    public CurrentConditionsDisplay(WeatherStation weatherStation)
+    {
+        weatherStation.WeatherChanged += OnWeatherChanged;
+    }
+
+    private void OnWeatherChanged(object? sender, WeatherData e)
+    {
+        Console.WriteLine($"Current conditions: {e.Temperature}F degrees and {e.Humidity}% humidity");
+    }
+}
+
+// IObservable-based Subject
+public class ObservableWeatherStation : IObservable<WeatherData>
+{
+    private WeatherData _weatherData = new WeatherData();
+    private List<IObserver<WeatherData>> _observers = new List<IObserver<WeatherData>>();
+
+    public IDisposable Subscribe(IObserver<WeatherData> observer)
+    {
+        if (!_observers.Contains(observer))
+            _observers.Add(observer);
+        return new Unsubscriber(_observers, observer);
+    }
+
+    public void SetMeasurements(float temperature, float humidity, float pressure)
+    {
+        _weatherData.Temperature = temperature;
+        _weatherData.Humidity = humidity;
+        _weatherData.Pressure = pressure;
+        NotifyObservers();
+    }
+
+    private void NotifyObservers()
+    {
+        foreach (var observer in _observers)
+        {
+            observer.OnNext(_weatherData);
+        }
+    }
+
+    private class Unsubscriber : IDisposable
+    {
+        private List<IObserver<WeatherData>> _observers;
+        private IObserver<WeatherData> _observer;
+
+        public Unsubscriber(List<IObserver<WeatherData>> observers, IObserver<WeatherData> observer)
+        {
+            _observers = observers;
+            _observer = observer;
+        }
+
+        public void Dispose()
+        {
+            if (_observer != null && _observers.Contains(_observer))
+                _observers.Remove(_observer);
+        }
+    }
+}
+
+// IObserver-based Observer
+public class StatisticsDisplay : IObserver<WeatherData>
+{
+    private float _maxTemp = float.MinValue;
+    private float _minTemp = float.MaxValue;
+    private float _tempSum = 0.0f;
+    private int _numReadings = 0;
+
+    public void OnCompleted()
+    {
+        Console.WriteLine("Weather station has completed transmitting data");
+    }
+
+    public void OnError(Exception error)
+    {
+        Console.WriteLine($"Error occurred: {error.Message}");
+    }
+
+    public void OnNext(WeatherData value)
+    {
+        _tempSum += value.Temperature;
+        _numReadings++;
+
+        if (value.Temperature > _maxTemp)
+            _maxTemp = value.Temperature;
+        if (value.Temperature < _minTemp)
+            _minTemp = value.Temperature;
+
+        Console.WriteLine($"Avg/Max/Min temperature = {_tempSum / _numReadings}/{_maxTemp}/{_minTemp}");
+    }
+}
+
+// Client code
+public class WeatherApp
+{
+    public static void Main()
+    {
+        Console.WriteLine("Using traditional events:");
+        var weatherStation = new WeatherStation();
+        var currentDisplay = new CurrentConditionsDisplay(weatherStation);
+
+        weatherStation.SetMeasurements(80, 65, 30.4f);
+        weatherStation.SetMeasurements(82, 70, 29.2f);
+
+        Console.WriteLine("\nUsing IObservable:");
+        var observableWeatherStation = new ObservableWeatherStation();
+        var statisticsDisplay = new StatisticsDisplay();
+
+        using (observableWeatherStation.Subscribe(statisticsDisplay))
+        {
+            observableWeatherStation.SetMeasurements(80, 65, 30.4f);
+            observableWeatherStation.SetMeasurements(82, 70, 29.2f);
+        }
+    }
+}
