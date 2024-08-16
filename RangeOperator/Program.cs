@@ -74,4 +74,3 @@ foreach (var fruit in fruits)
     Console.WriteLine(fruit);
 }
 
-
