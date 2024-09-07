@@ -157,7 +157,7 @@ namespace RulePatternDemo
 
             IRule<Product> complexRule = new OrRule<Product>(
                 expensiveElectronics,
-                new AndRule<Product>(moderateElectronics, smartRule)
+                new AndRule<Product>(moderateElectronics, smartProducts)
             );
 
             // Create and use rule engine

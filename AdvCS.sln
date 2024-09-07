@@ -7,35 +7,53 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomEvents", "CustomEvent
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiDelegates", "MultiDelegates\MultiDelegates.csproj", "{F7D8D16C-31E8-4DCB-83CF-D4F08A8E35AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RangeOperator", "RangeOperator\RangeOperator.csproj", "{7CBE6CD1-2540-409C-A146-E0108A7E3476}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RangeOperator", "RangeOperator\RangeOperator.csproj", "{7CBE6CD1-2540-409C-A146-E0108A7E3476}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalUsings", "GlobalUsings\GlobalUsings.csproj", "{EC3B467B-8C2A-43F7-9A00-3ACE96FE88E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GlobalUsings", "GlobalUsings\GlobalUsings.csproj", "{EC3B467B-8C2A-43F7-9A00-3ACE96FE88E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RulePattern", "RulePattern\RulePattern.csproj", "{D45FA443-715A-4141-9CCB-40A22A5A3A0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RulePattern", "RulePattern\RulePattern.csproj", "{D45FA443-715A-4141-9CCB-40A22A5A3A0F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrategyPattern", "StrategyPattern\StrategyPattern.csproj", "{2CDC7BED-D9AD-4704-BE9A-D8AD8F772DE5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StrategyPattern", "StrategyPattern\StrategyPattern.csproj", "{2CDC7BED-D9AD-4704-BE9A-D8AD8F772DE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccessModifiers", "AccessModifiers\AccessModifiers.csproj", "{E3603B9C-49BD-40BA-A884-751FEC1E29BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccessModifiers", "AccessModifiers\AccessModifiers.csproj", "{E3603B9C-49BD-40BA-A884-751FEC1E29BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Singleton", "Singleton\Singleton.csproj", "{487A4C28-AA07-4425-B82E-E63FCF2E7C1C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Singleton", "Singleton\Singleton.csproj", "{487A4C28-AA07-4425-B82E-E63FCF2E7C1C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Decorator", "Decorator\Decorator.csproj", "{2A32D29C-B2AC-415F-BB73-FD678C6C3310}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Decorator", "Decorator\Decorator.csproj", "{2A32D29C-B2AC-415F-BB73-FD678C6C3310}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateMethod", "TemplateMethod\TemplateMethod.csproj", "{766B40B7-9E56-4F91-A23B-1F98BDDC5E8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemplateMethod", "TemplateMethod\TemplateMethod.csproj", "{766B40B7-9E56-4F91-A23B-1F98BDDC5E8C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandPattern", "CommandPattern\CommandPattern.csproj", "{EB8E0C37-6287-4B17-B482-4DDA628485CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommandPattern", "CommandPattern\CommandPattern.csproj", "{EB8E0C37-6287-4B17-B482-4DDA628485CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdapterPattern", "AdapterPattern\AdapterPattern.csproj", "{B2AE9F11-846F-4812-87AA-A7C74BC43AC7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdapterPattern", "AdapterPattern\AdapterPattern.csproj", "{B2AE9F11-846F-4812-87AA-A7C74BC43AC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProxyPattern", "ProxyPattern\ProxyPattern.csproj", "{95F6820D-23C0-4707-9C2F-4483BE52F646}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProxyPattern", "ProxyPattern\ProxyPattern.csproj", "{95F6820D-23C0-4707-9C2F-4483BE52F646}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FacadePattern", "FacadePattern\FacadePattern.csproj", "{C5DD5909-0A54-4397-B24D-14B0FC7D0F8E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FacadePattern", "FacadePattern\FacadePattern.csproj", "{C5DD5909-0A54-4397-B24D-14B0FC7D0F8E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObserverPattern", "ObserverPattern\ObserverPattern.csproj", "{03D5B244-C21E-4CF7-B54D-6A5439E4D484}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ObserverPattern", "ObserverPattern\ObserverPattern.csproj", "{03D5B244-C21E-4CF7-B54D-6A5439E4D484}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuncActDel", "FuncActDel\FuncActDel.csproj", "{E4D1995E-FB2B-42B8-9790-B40F7A3A26D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FuncActDel", "FuncActDel\FuncActDel.csproj", "{E4D1995E-FB2B-42B8-9790-B40F7A3A26D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LambdaParams", "LambdaParams\LambdaParams.csproj", "{A8FBD438-B293-4851-927B-D29E58A089DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LambdaParams", "LambdaParams\LambdaParams.csproj", "{A8FBD438-B293-4851-927B-D29E58A089DC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleValidateDel", "SimpleValidateDel\SimpleValidateDel.csproj", "{D0032827-B181-485B-A139-1C3DE5612783}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleValidateDel.Tests", "SimpleValidateDel.Tests\SimpleValidateDel.Tests.csproj", "{7F55FDE3-FECB-4715-AF80-5E18C8358487}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sort", "Sort\Sort.csproj", "{2502DADE-ED64-4B2B-9EAF-D73DCF12F695}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbstractTestClass", "AbstractTestClass\AbstractTestClass.csproj", "{9B1193F7-7771-4B1A-8AAC-DFC0B2CA45B3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YieldReturn", "YieldReturn\YieldReturn.csproj", "{57A761C9-1ED8-4F41-88BF-14116C3439D2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SwitchExpressions", "SwitchExpressions\SwitchExpressions.csproj", "{2AF023D4-B05A-4A5D-9F5D-B5135205C43B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Treads", "Treads\Treads.csproj", "{051F415D-13B5-42F7-B8A8-1D993541EE91}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stryker.Net.Sample", "Stryker.Net.Sample\Stryker.Net.Sample.csproj", "{32E17E8E-1B1A-4BA5-91DC-3AC47B230245}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stryker.Net.Sample.Tests", "Stryker.Net.Sample.Tests\Stryker.Net.Sample.Tests.csproj", "{6A0EA986-D6D6-48F4-A8B6-FC5F71F943F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -111,6 +129,42 @@ Global
 		{A8FBD438-B293-4851-927B-D29E58A089DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8FBD438-B293-4851-927B-D29E58A089DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8FBD438-B293-4851-927B-D29E58A089DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0032827-B181-485B-A139-1C3DE5612783}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0032827-B181-485B-A139-1C3DE5612783}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0032827-B181-485B-A139-1C3DE5612783}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0032827-B181-485B-A139-1C3DE5612783}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F55FDE3-FECB-4715-AF80-5E18C8358487}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F55FDE3-FECB-4715-AF80-5E18C8358487}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F55FDE3-FECB-4715-AF80-5E18C8358487}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F55FDE3-FECB-4715-AF80-5E18C8358487}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2502DADE-ED64-4B2B-9EAF-D73DCF12F695}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2502DADE-ED64-4B2B-9EAF-D73DCF12F695}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2502DADE-ED64-4B2B-9EAF-D73DCF12F695}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2502DADE-ED64-4B2B-9EAF-D73DCF12F695}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B1193F7-7771-4B1A-8AAC-DFC0B2CA45B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B1193F7-7771-4B1A-8AAC-DFC0B2CA45B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B1193F7-7771-4B1A-8AAC-DFC0B2CA45B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B1193F7-7771-4B1A-8AAC-DFC0B2CA45B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57A761C9-1ED8-4F41-88BF-14116C3439D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57A761C9-1ED8-4F41-88BF-14116C3439D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57A761C9-1ED8-4F41-88BF-14116C3439D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57A761C9-1ED8-4F41-88BF-14116C3439D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AF023D4-B05A-4A5D-9F5D-B5135205C43B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AF023D4-B05A-4A5D-9F5D-B5135205C43B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AF023D4-B05A-4A5D-9F5D-B5135205C43B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AF023D4-B05A-4A5D-9F5D-B5135205C43B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{051F415D-13B5-42F7-B8A8-1D993541EE91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{051F415D-13B5-42F7-B8A8-1D993541EE91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{051F415D-13B5-42F7-B8A8-1D993541EE91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{051F415D-13B5-42F7-B8A8-1D993541EE91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32E17E8E-1B1A-4BA5-91DC-3AC47B230245}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32E17E8E-1B1A-4BA5-91DC-3AC47B230245}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32E17E8E-1B1A-4BA5-91DC-3AC47B230245}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32E17E8E-1B1A-4BA5-91DC-3AC47B230245}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A0EA986-D6D6-48F4-A8B6-FC5F71F943F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A0EA986-D6D6-48F4-A8B6-FC5F71F943F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A0EA986-D6D6-48F4-A8B6-FC5F71F943F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A0EA986-D6D6-48F4-A8B6-FC5F71F943F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
