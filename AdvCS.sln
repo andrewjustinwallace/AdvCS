@@ -55,6 +55,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stryker.Net.Sample", "Stryk
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stryker.Net.Sample.Tests", "Stryker.Net.Sample.Tests\Stryker.Net.Sample.Tests.csproj", "{6A0EA986-D6D6-48F4-A8B6-FC5F71F943F2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Records", "Records\Records.csproj", "{41413957-B340-4FD6-B420-F2BC68868AC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benchmarking", "Benchmarking\Benchmarking.csproj", "{CC070698-7B69-45FD-B793-7799BB5C8891}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -165,6 +169,14 @@ Global
 		{6A0EA986-D6D6-48F4-A8B6-FC5F71F943F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A0EA986-D6D6-48F4-A8B6-FC5F71F943F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A0EA986-D6D6-48F4-A8B6-FC5F71F943F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41413957-B340-4FD6-B420-F2BC68868AC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41413957-B340-4FD6-B420-F2BC68868AC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41413957-B340-4FD6-B420-F2BC68868AC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41413957-B340-4FD6-B420-F2BC68868AC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC070698-7B69-45FD-B793-7799BB5C8891}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC070698-7B69-45FD-B793-7799BB5C8891}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC070698-7B69-45FD-B793-7799BB5C8891}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC070698-7B69-45FD-B793-7799BB5C8891}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
