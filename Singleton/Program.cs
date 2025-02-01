@@ -1,4 +1,24 @@
-﻿using System;
+﻿/*
+ * This program demonstrates the Singleton design pattern in C#, ensuring a class
+ * has only one instance and providing a global point of access to that instance.
+ * The implementation is thread-safe using double-check locking.
+ * 
+ * Key concepts demonstrated:
+ * 1. Private constructor to prevent direct instantiation
+ * 2. Static instance holder
+ * 3. Lazy initialization
+ * 4. Thread-safe implementation using lock
+ * 5. Double-check locking pattern
+ * 
+ * Pattern benefits:
+ * - Ensures single instance exists
+ * - Provides global access point
+ * - Lazy initialization support
+ * - Thread-safe operation
+ * - Controls access to shared resource
+ */
+
+using System;
 using System.Threading.Tasks;
 
 namespace SingletonPatternDemo

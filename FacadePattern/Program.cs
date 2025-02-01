@@ -1,4 +1,23 @@
-﻿using System;
+﻿/*
+ * This program demonstrates the Facade design pattern using a home theater system example.
+ * The Facade pattern provides a unified interface to a set of interfaces in a subsystem,
+ * making the subsystem easier to use by defining a higher-level interface.
+ * 
+ * Key concepts demonstrated:
+ * 1. Complex subsystem classes (Amplifier, DvdPlayer, Projector)
+ * 2. Facade class (HomeTheaterFacade) providing simplified interface
+ * 3. Client code using the facade instead of subsystem classes directly
+ * 4. Dependency injection in facade constructor
+ * 
+ * Pattern benefits:
+ * - Simplifies complex subsystem interaction
+ * - Reduces coupling between client and subsystem
+ * - Provides unified interface to set of interfaces
+ * - Promotes loose coupling
+ * - Hides subsystem complexity
+ */
+
+using System;
 
 // Complex subsystem classes
 public class Amplifier

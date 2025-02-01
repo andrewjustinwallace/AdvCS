@@ -1,4 +1,25 @@
-﻿using System;
+﻿/*
+ * This program demonstrates the Template Method design pattern using a beverage preparation example.
+ * The Template Method pattern defines the skeleton of an algorithm in a method, deferring some
+ * steps to subclasses. It lets subclasses redefine certain steps of an algorithm without
+ * changing the algorithm's structure.
+ * 
+ * Key concepts demonstrated:
+ * 1. Abstract base class (Beverage) with template method
+ * 2. Concrete implementations (Tea, Coffee)
+ * 3. Hook methods (CustomerWantsCondiments)
+ * 4. Invariant steps (BoilWater, PourInCup)
+ * 5. Abstract operations (Brew, AddCondiments)
+ * 
+ * Pattern benefits:
+ * - Reuses common code in base class
+ * - Provides framework for varying parts
+ * - Enforces consistent algorithm structure
+ * - Enables selective overriding
+ * - Supports Hollywood Principle ("don't call us, we'll call you")
+ */
+
+using System;
 
 namespace TemplateMethodPatternDemo
 {
