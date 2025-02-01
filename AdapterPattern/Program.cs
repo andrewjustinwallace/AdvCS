@@ -9,6 +9,32 @@
  * 3. Adapter class that bridges ITarget and Adaptee
  * 4. Client code working with ITarget interface
  * 
+ * SOLID Principles demonstrated:
+ * 1. Single Responsibility Principle (SRP):
+ *    - Adapter class has single responsibility of adapting one interface to another
+ *    - Adaptee maintains its original responsibility without modification
+ *    - Client maintains its responsibility of using the Target interface
+ * 
+ * 2. Open/Closed Principle (OCP):
+ *    - New adapters can be created without modifying existing code
+ *    - Existing adaptee classes can be reused without modification
+ *    - Client code remains unchanged when new adapters are added
+ * 
+ * 3. Liskov Substitution Principle (LSP):
+ *    - Adapter can be used anywhere the Target interface is expected
+ *    - Multiple adapters for the same interface can be substituted
+ *    - Runtime behavior remains consistent with interface contract
+ * 
+ * 4. Interface Segregation Principle (ISP):
+ *    - Target interface defines minimal required methods
+ *    - Adapter only implements necessary interface methods
+ *    - Client only depends on methods it actually uses
+ * 
+ * 5. Dependency Inversion Principle (DIP):
+ *    - High-level client code depends on Target abstraction
+ *    - Adapter provides loose coupling between interfaces
+ *    - Dependencies flow toward abstractions, not concrete classes
+ * 
  * Pattern benefits:
  * - Allows integration of new code with existing code
  * - Promotes loose coupling

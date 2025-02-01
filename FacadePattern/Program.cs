@@ -9,6 +9,27 @@
  * 3. Client code using the facade instead of subsystem classes directly
  * 4. Dependency injection in facade constructor
  * 
+ * SOLID Principles demonstrated:
+ * 1. Single Responsibility Principle (SRP):
+ *    - Each subsystem class has one specific responsibility (Amplifier handles audio, Projector handles video)
+ *    - Facade handles the single responsibility of coordinating these components
+ * 
+ * 2. Open/Closed Principle (OCP):
+ *    - New functionality can be added by creating new facade methods without modifying existing ones
+ *    - Additional subsystem components can be added without changing the facade interface
+ * 
+ * 3. Liskov Substitution Principle (LSP):
+ *    - Different implementations of subsystem components can be substituted (e.g., different projector types)
+ *    - Facade works with abstractions, allowing component substitution
+ * 
+ * 4. Interface Segregation Principle (ISP):
+ *    - Subsystem components expose focused interfaces specific to their functionality
+ *    - Facade provides simplified interface tailored to client needs
+ * 
+ * 5. Dependency Inversion Principle (DIP):
+ *    - Facade depends on abstractions injected through constructor
+ *    - High-level and low-level modules depend on abstractions
+ * 
  * Pattern benefits:
  * - Simplifies complex subsystem interaction
  * - Reduces coupling between client and subsystem

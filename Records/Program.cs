@@ -11,6 +11,37 @@
  * 5. Built-in toString implementation
  * 6. Pattern matching with records
  * 
+ * SOLID Principles demonstrated:
+ * 1. Single Responsibility Principle (SRP):
+ *    - Each record type represents a single business concept
+ *    - OrderService handles only order-related operations
+ *    - Records focus on data structure without behavior
+ *    - Exception handling is separated for each error case
+ * 
+ * 2. Open/Closed Principle (OCP):
+ *    - New order operations can be added without modifying records
+ *    - Record inheritance allows extension without modification
+ *    - Service methods support extension through new record types
+ *    - Status updates support new statuses without code changes
+ * 
+ * 3. Liskov Substitution Principle (LSP):
+ *    - Records maintain immutability contract
+ *    - Derived records preserve base behavior
+ *    - Collection operations work consistently with record types
+ *    - Value equality remains consistent in inheritance hierarchy
+ * 
+ * 4. Interface Segregation Principle (ISP):
+ *    - Records contain only necessary properties
+ *    - Service methods expose focused operations
+ *    - Each record type has minimal, cohesive interface
+ *    - Status updates are handled through separate interface
+ * 
+ * 5. Dependency Inversion Principle (DIP):
+ *    - Service depends on record abstractions
+ *    - Collections use immutable interfaces
+ *    - Status updates work with status abstractions
+ *    - Order operations depend on abstract order concept
+ * 
  * The example includes:
  * - Product, OrderItem, Order, and OrderStatus records
  * - OrderService class demonstrating record manipulation

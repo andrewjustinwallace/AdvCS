@@ -9,6 +9,32 @@
  * 3. Project-wide namespace imports
  * 4. Built-in global usings in .NET 6+ projects
  * 
+ * SOLID Principles demonstrated:
+ * 1. Single Responsibility Principle (SRP):
+ *    - Global usings file has single responsibility of managing namespace imports
+ *    - Each namespace provides focused, related functionality
+ *    - Program class focuses on demonstrating usage without import concerns
+ * 
+ * 2. Open/Closed Principle (OCP):
+ *    - New namespaces can be added without modifying existing code
+ *    - Aliases can be added without affecting existing code
+ *    - Global using statements can be extended without changing consumer code
+ * 
+ * 3. Liskov Substitution Principle (LSP):
+ *    - Aliased types maintain substitutability with their base types
+ *    - Global using statements preserve type relationships
+ *    - Namespace hierarchies remain consistent
+ * 
+ * 4. Interface Segregation Principle (ISP):
+ *    - Each global using imports only necessary namespaces
+ *    - Aliases provide focused access to specific functionality
+ *    - Projects only include required namespace imports
+ * 
+ * 5. Dependency Inversion Principle (DIP):
+ *    - Global usings can reference abstractions instead of concrete types
+ *    - Aliases can map to interfaces or abstract classes
+ *    - Dependencies are centrally managed at project level
+ * 
  * Benefits shown:
  * - Reduced boilerplate code
  * - Centralized namespace management

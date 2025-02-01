@@ -10,6 +10,37 @@
  * 4. Rule engine for applying rules to collections
  * 5. Rule chaining and complex rule composition
  * 
+ * SOLID Principles demonstrated:
+ * 1. Single Responsibility Principle (SRP):
+ *    - Each rule class handles one specific validation logic
+ *    - RuleEngine focuses solely on applying rules
+ *    - Product class manages only product data
+ *    - Composite rules handle only rule combination logic
+ * 
+ * 2. Open/Closed Principle (OCP):
+ *    - New rules can be added without modifying existing ones
+ *    - Rule combinations can be extended without changing base rules
+ *    - RuleEngine works with any rule implementation
+ *    - New composite rules can be added without affecting others
+ * 
+ * 3. Liskov Substitution Principle (LSP):
+ *    - All rules follow IRule<T> contract
+ *    - Composite rules can be used anywhere single rules are expected
+ *    - Rules maintain consistent behavior when combined
+ *    - Rule substitution preserves system behavior
+ * 
+ * 4. Interface Segregation Principle (ISP):
+ *    - IRule<T> interface defines minimal required method
+ *    - Rules implement only necessary functionality
+ *    - Clients depend only on rules they need
+ *    - Rule combinations don't force unnecessary dependencies
+ * 
+ * 5. Dependency Inversion Principle (DIP):
+ *    - High-level RuleEngine depends on IRule<T> abstraction
+ *    - Rule implementations depend on abstractions
+ *    - Rule composition works with abstractions
+ *    - Concrete rules are injected at runtime
+ * 
  * Pattern benefits:
  * - Encapsulates business rules in separate classes
  * - Enables rule composition and reuse

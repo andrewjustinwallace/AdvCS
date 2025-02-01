@@ -10,6 +10,37 @@
  * 4. Type-safe comparisons
  * 5. Custom object sorting
  * 
+ * SOLID Principles demonstrated:
+ * 1. Single Responsibility Principle (SRP):
+ *    - SortArray class handles only sorting logic
+ *    - Employee class manages only employee data
+ *    - CompareTo method focuses solely on comparison logic
+ *    - Swap method handles only element exchange
+ * 
+ * 2. Open/Closed Principle (OCP):
+ *    - New sortable types can be added without modifying sort logic
+ *    - Employee comparison can be changed without affecting sort algorithm
+ *    - Sort class works with any IComparable<T> implementation
+ *    - New sorting algorithms can be added without changing existing code
+ * 
+ * 3. Liskov Substitution Principle (LSP):
+ *    - Any IComparable<T> type can be sorted
+ *    - Sort behavior remains consistent across types
+ *    - Employee implements comparison contract correctly
+ *    - Generic constraint ensures type safety
+ * 
+ * 4. Interface Segregation Principle (ISP):
+ *    - IComparable<T> provides focused comparison method
+ *    - Types implement only necessary comparison logic
+ *    - Sort algorithm depends only on comparison capability
+ *    - Employee exposes minimal required interface
+ * 
+ * 5. Dependency Inversion Principle (DIP):
+ *    - Sort logic depends on IComparable<T> abstraction
+ *    - Implementation details are passed through generics
+ *    - Concrete types implement comparison interface
+ *    - Algorithm works with interface, not concrete types
+ * 
  * Examples include:
  * - Sorting integers (commented out)
  * - Sorting strings (commented out)

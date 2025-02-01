@@ -10,6 +10,32 @@
  * 4. Complex collection processing using lambda expressions
  * 5. Generic delegate types (Func<T,TResult>) with collection parameters
  * 
+ * SOLID Principles demonstrated:
+ * 1. Single Responsibility Principle (SRP):
+ *    - Each lambda expression performs one specific operation
+ *    - Processing methods have single responsibility of executing operations
+ *    - Collection operations are focused on specific transformations
+ * 
+ * 2. Open/Closed Principle (OCP):
+ *    - New operations can be added as new lambda expressions
+ *    - Processing methods remain unchanged while supporting new operations
+ *    - Collection processing can be extended without modifying existing code
+ * 
+ * 3. Liskov Substitution Principle (LSP):
+ *    - Different collection types can be processed consistently
+ *    - Lambda expressions work with base types and derived types
+ *    - Processing methods handle any compatible delegate type
+ * 
+ * 4. Interface Segregation Principle (ISP):
+ *    - Lambda expressions define minimal required functionality
+ *    - Generic constraints ensure only necessary operations are required
+ *    - Collection processing uses focused interfaces (IEnumerable<T>)
+ * 
+ * 5. Dependency Inversion Principle (DIP):
+ *    - Methods depend on delegate type abstractions
+ *    - Collection processing depends on IEnumerable<T> interface
+ *    - Implementation details are passed as lambda expressions
+ * 
  * Examples include:
  * - Basic numeric operations (Average, Max)
  * - Conditional processing (filtering even numbers)

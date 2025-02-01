@@ -9,6 +9,32 @@
  * 4. Method-level benchmarking with [Benchmark] attribute
  * 5. Performance comparison of different string concatenation approaches
  * 
+ * SOLID Principles demonstrated:
+ * 1. Single Responsibility Principle (SRP):
+ *    - Each benchmark method has a single responsibility of testing one concatenation approach
+ *    - The benchmark class focuses solely on string concatenation performance testing
+ *    - Configuration setup is separated from benchmark implementation
+ * 
+ * 2. Open/Closed Principle (OCP):
+ *    - New benchmarks can be added by creating new methods without modifying existing ones
+ *    - Configuration can be extended without changing benchmark implementation
+ *    - Attribute-based approach allows for extension without modification
+ * 
+ * 3. Liskov Substitution Principle (LSP):
+ *    - All benchmark methods follow the same contract defined by BenchmarkDotNet
+ *    - Different benchmark configurations can be substituted without affecting the tests
+ *    - Results remain consistent with the BenchmarkDotNet contract
+ * 
+ * 4. Interface Segregation Principle (ISP):
+ *    - Each benchmark method implements only the necessary operations
+ *    - Configuration uses specific interfaces for different aspects (logging, validation)
+ *    - Diagnostics are applied selectively using attributes
+ * 
+ * 5. Dependency Inversion Principle (DIP):
+ *    - Benchmark framework depends on abstractions (attributes, interfaces)
+ *    - Configuration is built using abstract providers and validators
+ *    - Logger and validator implementations are injected through configuration
+ * 
  * The benchmark compares:
  * - Plus operator concatenation ("+" operator)
  * - String.Concat method

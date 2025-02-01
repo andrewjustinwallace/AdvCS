@@ -6,6 +6,37 @@ Filtering Collections: The GetEvenNumbers method filters a collection to return 
 Implementing Custom Collections: The Deck class implements IEnumerable<string> to create a custom collection of playing cards, generating each card on demand.
 Lazy Loading of Data: The GetLargeDataSet method simulates loading a large dataset, but only processes items as they're requested.
 
+SOLID Principles demonstrated:
+1. Single Responsibility Principle (SRP):
+   - Each iterator method has a single purpose
+   - Deck class focuses solely on card enumeration
+   - Filtering methods handle specific filtering logic
+   - Data generation methods focus on specific sequences
+ 
+2. Open/Closed Principle (OCP):
+   - New sequence generators can be added without modifying existing ones
+   - Filtering logic can be extended with new methods
+   - Deck enumeration can be modified through inheritance
+   - Data loading can be extended without changing consumers
+ 
+3. Liskov Substitution Principle (LSP):
+   - All iterators follow IEnumerable contract
+   - Generic and non-generic enumerators are compatible
+   - Iterator implementations maintain sequence behavior
+   - Collection implementations preserve enumeration semantics
+ 
+4. Interface Segregation Principle (ISP):
+   - Methods implement only necessary iteration logic
+   - Deck implements minimal required interfaces
+   - Consumers depend only on IEnumerable
+   - Iterator methods expose focused functionality
+ 
+5. Dependency Inversion Principle (DIP):
+   - Methods depend on IEnumerable abstractions
+   - Consumers work with iterator interfaces
+   - Implementation details are hidden from consumers
+   - Enumeration logic is decoupled from usage
+
 Key benefits of using yield return in these scenarios:
 
 Memory Efficiency: It allows you to work with large sequences of data without loading everything into memory at once.
@@ -13,8 +44,6 @@ Improved Performance: For large datasets, it can be faster because it doesn't re
 Simplicity: It simplifies the implementation of iterators, making the code more readable and maintainable.
 Lazy Evaluation: It enables lazy evaluation, where items are only generated when they're actually needed.
 */
-
-
 
 using System;
 using System.Collections;
@@ -42,9 +71,6 @@ class Program
         }
         Console.WriteLine("\n");
 
-
-
-
         // Example 3: Implementing a custom collection
         var deck = new Deck();
         Console.WriteLine("Cards in the deck:");
@@ -62,8 +88,6 @@ class Program
         {
             Console.WriteLine(card);
         }
-
-
 
         // Example 4: Lazy loading of data
         Console.WriteLine("Lazy loading of large data set:");

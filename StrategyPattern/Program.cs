@@ -9,6 +9,37 @@
  * 3. Context (ShoppingCart) that uses the strategy
  * 4. Runtime strategy selection
  * 
+ * SOLID Principles demonstrated:
+ * 1. Single Responsibility Principle (SRP):
+ *    - Each payment strategy handles one payment method
+ *    - ShoppingCart manages only cart operations
+ *    - Each class has a single reason to change
+ *    - Payment processing is separated from cart logic
+ * 
+ * 2. Open/Closed Principle (OCP):
+ *    - New payment strategies can be added without modifying existing code
+ *    - ShoppingCart works with any payment strategy
+ *    - Strategy interface remains stable while implementations vary
+ *    - Payment processing is extended through new classes
+ * 
+ * 3. Liskov Substitution Principle (LSP):
+ *    - All payment strategies follow IPaymentStrategy contract
+ *    - Strategies can be used interchangeably
+ *    - ShoppingCart works with any strategy implementation
+ *    - Payment behavior remains consistent with interface
+ * 
+ * 4. Interface Segregation Principle (ISP):
+ *    - IPaymentStrategy defines minimal required method
+ *    - Payment strategies implement only necessary functionality
+ *    - Clients depend only on payment methods they use
+ *    - Interface focuses on specific payment capability
+ * 
+ * 5. Dependency Inversion Principle (DIP):
+ *    - ShoppingCart depends on IPaymentStrategy abstraction
+ *    - Payment implementations depend on abstraction
+ *    - Strategy selection is decoupled from usage
+ *    - High-level modules depend on abstractions
+ * 
  * Pattern benefits:
  * - Encapsulates algorithm implementations
  * - Enables runtime algorithm switching

@@ -16,6 +16,32 @@
  *    - Inline method definitions
  *    - Both statement and expression lambdas
  *
+ * SOLID Principles demonstrated:
+ * 1. Single Responsibility Principle (SRP):
+ *    - Each delegate handles one specific operation
+ *    - PerformOperation method focuses solely on executing the operation
+ *    - ProcessString method handles only string processing delegation
+ * 
+ * 2. Open/Closed Principle (OCP):
+ *    - New operations can be added without modifying existing methods
+ *    - Delegate parameters allow extension of functionality
+ *    - Base methods remain unchanged while supporting new behaviors
+ * 
+ * 3. Liskov Substitution Principle (LSP):
+ *    - Any compatible delegate can be substituted
+ *    - Lambda expressions can be used interchangeably with method delegates
+ *    - Behavior remains consistent with delegate signatures
+ * 
+ * 4. Interface Segregation Principle (ISP):
+ *    - Func and Action delegates provide focused interfaces
+ *    - Methods depend only on the delegate types they need
+ *    - Clients aren't forced to implement unnecessary methods
+ * 
+ * 5. Dependency Inversion Principle (DIP):
+ *    - Methods depend on delegate abstractions
+ *    - Implementation details are passed as parameters
+ *    - High-level modules are decoupled from specific implementations
+ *
  * Common use cases:
  * - Callback methods
  * - LINQ operations

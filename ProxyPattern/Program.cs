@@ -11,6 +11,32 @@
  *    - Lazy initialization
  *    - Logging and monitoring
  * 
+ * SOLID Principles demonstrated:
+ * 1. Single Responsibility Principle (SRP):
+ *    - RealSubject handles only core business logic
+ *    - Proxy handles only access control and logging
+ *    - Each class has a single reason to change
+ * 
+ * 2. Open/Closed Principle (OCP):
+ *    - New proxy types can be added without modifying existing code
+ *    - Additional security rules can be added through new proxy implementations
+ *    - Logging behavior can be extended without changing core logic
+ * 
+ * 3. Liskov Substitution Principle (LSP):
+ *    - Proxy can be used anywhere ISubject is expected
+ *    - RealSubject can be replaced with any ISubject implementation
+ *    - Behavior remains consistent with interface contract
+ * 
+ * 4. Interface Segregation Principle (ISP):
+ *    - ISubject interface defines minimal required methods
+ *    - Clients depend only on methods they use
+ *    - Proxy implementation focuses on specific responsibilities
+ * 
+ * 5. Dependency Inversion Principle (DIP):
+ *    - High-level modules depend on ISubject abstraction
+ *    - Proxy and RealSubject depend on abstraction
+ *    - Client code works with interface, not concrete classes
+ * 
  * Pattern benefits:
  * - Security: Controls access to sensitive objects
  * - Performance: Supports lazy loading of expensive objects

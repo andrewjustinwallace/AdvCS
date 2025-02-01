@@ -10,6 +10,37 @@
  * 4. LINQ All() method for validation chaining
  * 5. Password validation example
  * 
+ * SOLID Principles demonstrated:
+ * 1. Single Responsibility Principle (SRP):
+ *    - ValidationDelegate focuses solely on validation logic
+ *    - RegistrationValidator manages only validation rule collection
+ *    - Each validation rule handles one specific check
+ *    - Lambda expressions encapsulate single validation logic
+ * 
+ * 2. Open/Closed Principle (OCP):
+ *    - New validation rules can be added without modifying existing code
+ *    - Validator class accepts any validation rule meeting delegate signature
+ *    - Validation chain can be extended without changing implementation
+ *    - Lambda expressions allow flexible rule definition
+ * 
+ * 3. Liskov Substitution Principle (LSP):
+ *    - All validation methods follow delegate signature
+ *    - Validation rules are interchangeable in the chain
+ *    - Lambda expressions maintain consistent behavior
+ *    - Rules can be substituted without affecting validation chain
+ * 
+ * 4. Interface Segregation Principle (ISP):
+ *    - ValidationDelegate defines minimal required method
+ *    - Validation rules implement only necessary logic
+ *    - Clients depend only on validations they need
+ *    - Each rule focuses on specific validation aspect
+ * 
+ * 5. Dependency Inversion Principle (DIP):
+ *    - Validator depends on ValidationDelegate abstraction
+ *    - Rules are passed as delegate instances
+ *    - Implementation details are decoupled through delegation
+ *    - Concrete validation logic is injected at runtime
+ * 
  * The example shows:
  * - Creating a custom validation delegate
  * - Adding multiple validation rules

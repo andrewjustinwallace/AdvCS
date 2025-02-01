@@ -10,6 +10,37 @@
  * 4. Thread-safe implementation using lock
  * 5. Double-check locking pattern
  * 
+ * SOLID Principles demonstrated:
+ * 1. Single Responsibility Principle (SRP):
+ *    - Singleton class manages its own instantiation
+ *    - Instance management is encapsulated within the class
+ *    - Count management is separate from instance management
+ *    - Thread synchronization is handled internally
+ * 
+ * 2. Open/Closed Principle (OCP):
+ *    - New functionality can be added without modifying instance management
+ *    - Thread safety mechanism can be extended without changing core logic
+ *    - Additional features can be added through inheritance
+ *    - Client code remains unchanged when singleton is modified
+ * 
+ * 3. Liskov Substitution Principle (LSP):
+ *    - All instances share the same behavior
+ *    - Instance access remains consistent
+ *    - Thread safety guarantees are maintained
+ *    - Behavior is consistent across all access points
+ * 
+ * 4. Interface Segregation Principle (ISP):
+ *    - Singleton exposes only necessary methods
+ *    - Instance property provides focused access
+ *    - Clients depend only on methods they use
+ *    - Implementation details are hidden
+ * 
+ * 5. Dependency Inversion Principle (DIP):
+ *    - Singleton can implement interfaces for abstraction
+ *    - Client code can depend on abstractions
+ *    - Instance management is independent of usage
+ *    - Implementation details are encapsulated
+ * 
  * Pattern benefits:
  * - Ensures single instance exists
  * - Provides global access point

@@ -11,6 +11,32 @@
  * 5. Command history implementation using Stack<T>
  * 6. Undo functionality implementation
  * 
+ * SOLID Principles demonstrated:
+ * 1. Single Responsibility Principle (SRP):
+ *    - Each command class has single responsibility of encapsulating one operation
+ *    - Light class handles only lighting operations
+ *    - RemoteControl focuses solely on command execution and history
+ * 
+ * 2. Open/Closed Principle (OCP):
+ *    - New commands can be added without modifying existing commands
+ *    - RemoteControl works with any command without modification
+ *    - Command history works with any command that implements ICommand
+ * 
+ * 3. Liskov Substitution Principle (LSP):
+ *    - All commands can be used interchangeably through ICommand interface
+ *    - RemoteControl works with any concrete command implementation
+ *    - Command history treats all commands uniformly
+ * 
+ * 4. Interface Segregation Principle (ISP):
+ *    - ICommand interface defines minimal required methods (Execute and Undo)
+ *    - Commands implement only the methods they need
+ *    - Clients depend only on the commands they use
+ * 
+ * 5. Dependency Inversion Principle (DIP):
+ *    - High-level RemoteControl depends on ICommand abstraction
+ *    - Command implementations depend on abstractions
+ *    - Concrete commands are injected into RemoteControl
+ * 
  * Pattern benefits:
  * - Decouples object making request from objects that handle the request
  * - Enables command queueing and command history

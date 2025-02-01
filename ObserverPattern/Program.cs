@@ -19,6 +19,33 @@
  *    - Subscription management with IDisposable
  *    - Observer notification (OnNext, OnError, OnCompleted)
  * 
+ * SOLID Principles demonstrated:
+ * 1. Single Responsibility Principle (SRP):
+ *    - WeatherData class solely manages weather measurements
+ *    - WeatherStation focuses only on publishing updates
+ *    - Display classes handle only their specific display logic
+ *    - Unsubscriber handles only subscription management
+ * 
+ * 2. Open/Closed Principle (OCP):
+ *    - New observers can be added without modifying subjects
+ *    - New display types can be created without changing weather stations
+ *    - Weather data can be extended without affecting observers
+ * 
+ * 3. Liskov Substitution Principle (LSP):
+ *    - Any IObserver<WeatherData> can be used with ObservableWeatherStation
+ *    - Different weather station implementations can be substituted
+ *    - Display implementations are interchangeable within their types
+ * 
+ * 4. Interface Segregation Principle (ISP):
+ *    - IObservable interface provides focused subscription method
+ *    - IObserver interface defines minimal required methods
+ *    - Event handlers implement only necessary functionality
+ * 
+ * 5. Dependency Inversion Principle (DIP):
+ *    - High-level modules depend on IObservable/IObserver abstractions
+ *    - Event handlers depend on EventHandler delegate type
+ *    - Concrete implementations depend on abstractions
+ * 
  * Pattern benefits:
  * - Loose coupling between subjects and observers
  * - Support for multiple observers

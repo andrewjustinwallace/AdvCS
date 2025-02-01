@@ -8,6 +8,32 @@
  * 3. Thread-safe event invocation using null-check pattern
  * 4. Protected virtual OnEventName method pattern for raising events
  * 
+ * SOLID Principles demonstrated:
+ * 1. Single Responsibility Principle (SRP):
+ *    - Counter class handles only counting and threshold checking
+ *    - ThresholdReachedEventArgs class only carries event data
+ *    - Main program handles only user input and event subscription
+ * 
+ * 2. Open/Closed Principle (OCP):
+ *    - New event types can be added without modifying existing event handlers
+ *    - Counter class can be extended through inheritance (virtual method)
+ *    - Event handling can be extended without modifying Counter class
+ * 
+ * 3. Liskov Substitution Principle (LSP):
+ *    - ThresholdReachedEventArgs extends EventArgs properly
+ *    - Counter class can be inherited safely due to protected virtual method
+ *    - Event handler delegates follow standard EventHandler<T> pattern
+ * 
+ * 4. Interface Segregation Principle (ISP):
+ *    - Event arguments contain only necessary properties
+ *    - Counter exposes minimal public interface
+ *    - Event subscription pattern follows standard .NET conventions
+ * 
+ * 5. Dependency Inversion Principle (DIP):
+ *    - Event handlers depend on EventArgs abstraction
+ *    - Counter works with any compatible event handler
+ *    - Components are loosely coupled through event pattern
+ * 
  * Usage:
  * - Creates a Counter with a threshold of 111
  * - User presses 'a' to increment counter

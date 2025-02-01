@@ -11,6 +11,37 @@
  * 4. Invariant steps (BoilWater, PourInCup)
  * 5. Abstract operations (Brew, AddCondiments)
  * 
+ * SOLID Principles demonstrated:
+ * 1. Single Responsibility Principle (SRP):
+ *    - Each beverage class handles its specific preparation
+ *    - Base template method manages algorithm flow
+ *    - Hook methods handle specific decision logic
+ *    - Concrete steps focus on specific operations
+ * 
+ * 2. Open/Closed Principle (OCP):
+ *    - New beverages can be added without modifying template
+ *    - Base algorithm remains unchanged for new implementations
+ *    - Hook methods allow extension without modification
+ *    - Preparation steps can be customized in subclasses
+ * 
+ * 3. Liskov Substitution Principle (LSP):
+ *    - Tea and Coffee can be used wherever Beverage is expected
+ *    - Template method behavior remains consistent
+ *    - Hook method overrides maintain contract
+ *    - Subclass operations follow base class patterns
+ * 
+ * 4. Interface Segregation Principle (ISP):
+ *    - Abstract methods define minimal required operations
+ *    - Hook methods are optional and focused
+ *    - Each step has specific, focused purpose
+ *    - Classes implement only necessary methods
+ * 
+ * 5. Dependency Inversion Principle (DIP):
+ *    - High-level algorithm depends on abstractions
+ *    - Concrete steps implement abstract operations
+ *    - Template depends on abstract methods
+ *    - Implementation details are in derived classes
+ * 
  * Pattern benefits:
  * - Reuses common code in base class
  * - Provides framework for varying parts

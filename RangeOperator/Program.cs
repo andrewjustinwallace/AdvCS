@@ -11,6 +11,32 @@
  * 5. Variable-based ranges
  * 6. List manipulation with ranges
  * 
+ * SOLID Principles demonstrated:
+ * 1. Single Responsibility Principle (SRP):
+ *    - Each range operation performs a single, well-defined slice operation
+ *    - Collection manipulations are focused on specific range operations
+ *    - Example code segments demonstrate single concepts
+ * 
+ * 2. Open/Closed Principle (OCP):
+ *    - Range operations work with any collection implementing IEnumerable
+ *    - New range functionality can be added without modifying existing code
+ *    - Collections can be extended to support custom range behavior
+ * 
+ * 3. Liskov Substitution Principle (LSP):
+ *    - Range operations work consistently across different collection types
+ *    - Arrays and Lists behave predictably with range operations
+ *    - Range results maintain collection type contracts
+ * 
+ * 4. Interface Segregation Principle (ISP):
+ *    - Range operations use minimal required collection interfaces
+ *    - Collections only need to implement necessary slicing behavior
+ *    - Clients only depend on the range operations they use
+ * 
+ * 5. Dependency Inversion Principle (DIP):
+ *    - Range operations work with collection abstractions
+ *    - Code depends on collection interfaces rather than concrete types
+ *    - Range functionality is decoupled from specific implementations
+ * 
  * Examples show:
  * - Inclusive start, exclusive end ranges
  * - Start-only and end-only ranges

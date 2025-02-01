@@ -12,6 +12,37 @@
  * 6. Logical patterns (and/or)
  * 7. Guard clauses (when conditions)
  * 
+ * SOLID Principles demonstrated:
+ * 1. Single Responsibility Principle (SRP):
+ *    - Each switch expression handles one specific classification
+ *    - Pattern matching methods focus on single categorization
+ *    - Drawing methods have single responsibility
+ *    - Each pattern handles specific case logic
+ * 
+ * 2. Open/Closed Principle (OCP):
+ *    - New patterns can be added without modifying existing ones
+ *    - Switch expressions support extension without modification
+ *    - Drawing operations can be extended with new shapes
+ *    - Pattern matching supports new types without changes
+ * 
+ * 3. Liskov Substitution Principle (LSP):
+ *    - Pattern matching preserves type hierarchies
+ *    - Shape drawing maintains consistent behavior
+ *    - Object classification works with any type
+ *    - Return types remain consistent across patterns
+ * 
+ * 4. Interface Segregation Principle (ISP):
+ *    - Each pattern handles minimal required logic
+ *    - Switch expressions focus on specific matching
+ *    - Drawing methods implement necessary operations
+ *    - Classifications depend only on required properties
+ * 
+ * 5. Dependency Inversion Principle (DIP):
+ *    - Pattern matching depends on abstractions
+ *    - Shape drawing depends on method abstractions
+ *    - Classifications work with abstract types
+ *    - Implementation details are separated from matching
+ * 
  * Examples include:
  * - Day type classification (weekend/weekday)
  * - Object type and value pattern matching
@@ -103,7 +134,6 @@ class Program
         { Age: >= 65 } => "Senior",
         _ => "Invalid age"
     };
-
 
     static bool DrawCircle()
     {
