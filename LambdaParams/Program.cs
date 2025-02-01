@@ -1,4 +1,24 @@
-﻿using System;
+/*
+ * This program demonstrates advanced usage of lambda expressions in C# with params arrays
+ * and different collection types. It shows how to combine lambda expressions with 
+ * flexible parameter arrays and LINQ operations.
+ * 
+ * Key concepts demonstrated:
+ * 1. Lambda expressions with params array parameters
+ * 2. Lambda expressions with different collection types (arrays, List<T>, HashSet<T>)
+ * 3. LINQ operations within lambda expressions
+ * 4. Complex collection processing using lambda expressions
+ * 5. Generic delegate types (Func<T,TResult>) with collection parameters
+ * 
+ * Examples include:
+ * - Basic numeric operations (Average, Max)
+ * - Conditional processing (filtering even numbers)
+ * - String operations (sorting, joining)
+ * - Complex collection analysis (grouping by length)
+ * - Null handling with null-coalescing operator
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 

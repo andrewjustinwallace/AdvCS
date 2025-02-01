@@ -1,4 +1,24 @@
-﻿using System;
+﻿/*
+ * This program demonstrates the Rule Pattern in C#, which allows for flexible and
+ * composable business rules. It implements a product filtering system that can
+ * combine multiple rules using logical operators.
+ * 
+ * Key concepts demonstrated:
+ * 1. Generic Rule interface (IRule<T>)
+ * 2. Concrete rule implementations
+ * 3. Composite rules (AND/OR combinations)
+ * 4. Rule engine for applying rules to collections
+ * 5. Rule chaining and complex rule composition
+ * 
+ * Pattern benefits:
+ * - Encapsulates business rules in separate classes
+ * - Enables rule composition and reuse
+ * - Provides flexible rule combinations
+ * - Maintains single responsibility principle
+ * - Easily extendable with new rules
+ */
+
+using System;
 using System.Collections.Generic;
 
 namespace RulePatternDemo

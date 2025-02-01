@@ -49,15 +49,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YieldReturn", "YieldReturn\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SwitchExpressions", "SwitchExpressions\SwitchExpressions.csproj", "{2AF023D4-B05A-4A5D-9F5D-B5135205C43B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Treads", "Treads\Treads.csproj", "{051F415D-13B5-42F7-B8A8-1D993541EE91}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Threads", "Treads\Threads.csproj", "{051F415D-13B5-42F7-B8A8-1D993541EE91}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stryker.Net.Sample", "Stryker.Net.Sample\Stryker.Net.Sample.csproj", "{32E17E8E-1B1A-4BA5-91DC-3AC47B230245}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stryker.Net.Sample.Tests", "Stryker.Net.Sample.Tests\Stryker.Net.Sample.Tests.csproj", "{6A0EA986-D6D6-48F4-A8B6-FC5F71F943F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Records", "Records\Records.csproj", "{41413957-B340-4FD6-B420-F2BC68868AC7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Records", "Records\Records.csproj", "{41413957-B340-4FD6-B420-F2BC68868AC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benchmarking", "Benchmarking\Benchmarking.csproj", "{CC070698-7B69-45FD-B793-7799BB5C8891}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Benchmarking", "Benchmarking\Benchmarking.csproj", "{CC070698-7B69-45FD-B793-7799BB5C8891}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

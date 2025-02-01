@@ -1,4 +1,25 @@
-﻿int[] numbers = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+/*
+ * This program demonstrates the Range operator (..) in C#, introduced in C# 8.0.
+ * The Range operator provides a concise syntax for specifying a range of indices
+ * in arrays and other collection types.
+ * 
+ * Key concepts demonstrated:
+ * 1. Basic range syntax (x..y)
+ * 2. Ranges with open ends (..y or x..)
+ * 3. Using ranges with arrays
+ * 4. Using ranges with List<T>
+ * 5. Variable-based ranges
+ * 6. List manipulation with ranges
+ * 
+ * Examples show:
+ * - Inclusive start, exclusive end ranges
+ * - Start-only and end-only ranges
+ * - Range operations on both arrays and lists
+ * - Range variables for dynamic range selection
+ * - List modifications using ranges
+ */
+
+int[] numbers = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 
 // Iterate over a range from index 2 to 6 (exclusive)
 Console.WriteLine("Iterate over range 2..6:");
@@ -73,4 +94,3 @@ foreach (var fruit in fruits)
 {
     Console.WriteLine(fruit);
 }
-

@@ -1,4 +1,25 @@
-﻿using System;
+/*
+ * This program demonstrates the Command design pattern using a smart home lighting system example.
+ * The Command pattern encapsulates a request as an object, allowing you to parameterize clients
+ * with different requests, queue or log requests, and support undoable operations.
+ * 
+ * Key concepts demonstrated:
+ * 1. Command Interface (ICommand) with Execute and Undo operations
+ * 2. Concrete Commands (LightOnCommand, LightOffCommand)
+ * 3. Receiver (Light) that performs the actual operations
+ * 4. Invoker (RemoteControl) that handles command execution and undo stack
+ * 5. Command history implementation using Stack<T>
+ * 6. Undo functionality implementation
+ * 
+ * Pattern benefits:
+ * - Decouples object making request from objects that handle the request
+ * - Enables command queueing and command history
+ * - Supports undo operations
+ * - Allows adding new commands without changing existing code
+ * - Promotes Single Responsibility Principle
+ */
+
+using System;
 using System.Collections.Generic;
 
 namespace CommandPatternDemo

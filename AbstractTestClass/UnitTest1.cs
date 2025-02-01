@@ -1,3 +1,22 @@
+/*
+ * This file demonstrates the use of abstract test classes in C# unit testing to implement
+ * the Template Method pattern for database testing.
+ * 
+ * Key concepts demonstrated:
+ * 1. Abstract Test Class Pattern - shared test logic in a base class
+ * 2. Template Method Pattern - CreateDatabase() as the template method
+ * 3. Interface-based design with IDatabase
+ * 4. Abstract class implementation with Database base class
+ * 5. Multiple concrete implementations (SQL Server and Postgres)
+ * 6. MSTest testing framework features - TestInitialize, TestCleanup, TestMethod
+ * 
+ * The pattern allows:
+ * - Common test logic to be shared across different database implementations
+ * - Specific test cases for each database type
+ * - Consistent test setup and teardown
+ * - Easy addition of new database implementations
+ */
+
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 

@@ -1,4 +1,26 @@
-﻿using System;
+﻿/*
+ * This program demonstrates the use of Switch Expressions in C# 8.0 and later.
+ * It showcases various ways to use the new switch expression syntax for pattern matching
+ * and value-based switching.
+ * 
+ * Key concepts demonstrated:
+ * 1. Basic switch expressions
+ * 2. Pattern matching
+ * 3. Property patterns
+ * 4. Tuple patterns
+ * 5. Relational patterns
+ * 6. Logical patterns (and/or)
+ * 7. Guard clauses (when conditions)
+ * 
+ * Examples include:
+ * - Day type classification (weekend/weekday)
+ * - Object type and value pattern matching
+ * - Point coordinate classification
+ * - Person age group classification
+ * - Shape drawing function selection
+ */
+
+using System;
 
 class Program
 {

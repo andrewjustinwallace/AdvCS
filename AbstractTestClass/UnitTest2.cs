@@ -1,4 +1,23 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+/*
+ * This file demonstrates advanced unit testing techniques in C# using MSTest framework,
+ * specifically focusing on data-driven testing and precision handling.
+ * 
+ * Key concepts demonstrated:
+ * 1. Data-Driven Testing using DynamicData attribute
+ * 2. Interface-based design with ICalculator
+ * 3. Multiple implementations (BasicCalculator and PreciseCalculator)
+ * 4. Yield return for test data generation
+ * 5. Precision testing with epsilon comparisons
+ * 6. Runtime type checking and conditional testing
+ * 
+ * The tests show how to:
+ * - Handle different precision requirements in calculations
+ * - Use dynamic data sources for parametrized testing
+ * - Test multiple implementations with the same test cases
+ * - Validate precision-specific behavior
+ */
+
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 

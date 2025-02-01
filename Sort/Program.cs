@@ -1,4 +1,23 @@
-﻿using System;
+﻿/*
+ * This program demonstrates generic sorting in C# using the bubble sort algorithm.
+ * It shows how to implement sorting for both built-in types and custom classes
+ * using the IComparable<T> interface.
+ * 
+ * Key concepts demonstrated:
+ * 1. Generic classes and constraints
+ * 2. IComparable<T> interface implementation
+ * 3. Bubble sort algorithm
+ * 4. Type-safe comparisons
+ * 5. Custom object sorting
+ * 
+ * Examples include:
+ * - Sorting integers (commented out)
+ * - Sorting strings (commented out)
+ * - Sorting custom Employee objects by name
+ * - Generic swap implementation
+ */
+
+using System;
 using System.Diagnostics.CodeAnalysis;
 
 namespace GenericBubbleSortApplication

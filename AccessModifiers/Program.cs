@@ -1,10 +1,21 @@
-﻿//public: Accessible from anywhere, both within the same assembly and from other assemblies.
-//private: Accessible only within the same class or struct.
-//protected: Accessible within the same class and by derived classes.
-//internal: Accessible within the same assembly, but not from other assemblies.
-//protected internal: Accessible within the same assembly and by derived classes in other assemblies.
-//private protected: Accessible within the same class and by derived classes in the same assembly.
-
+/*
+ * This program demonstrates the different access modifiers in C# and their scope of accessibility.
+ * It provides practical examples of how each modifier affects access to class members from:
+ * - Within the same class
+ * - Derived classes
+ * - External classes within the same assembly
+ * 
+ * Access Modifiers Demonstrated:
+ * 1. public: Accessible from anywhere
+ * 2. private: Only within the same class/struct
+ * 3. protected: Within same class and derived classes
+ * 4. internal: Within same assembly
+ * 5. protected internal: Within assembly and derived classes in other assemblies
+ * 6. private protected: Within class and derived classes in same assembly
+ * 
+ * The program uses inheritance to show how access changes in different contexts
+ * and includes examples of both legal and illegal (commented out) access attempts.
+ */
 
 using System;
 

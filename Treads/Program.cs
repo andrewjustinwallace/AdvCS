@@ -1,6 +1,32 @@
-﻿using System.Collections.Concurrent;
+﻿/*
+ * This program demonstrates a custom implementation of Task-like functionality in C#,
+ * showing the internal workings of asynchronous programming constructs.
+ * 
+ * Key concepts demonstrated:
+ * 1. Custom Task implementation (MyTask)
+ * 2. Custom ThreadPool implementation
+ * 3. Async/Await pattern implementation
+ * 4. Continuation passing style
+ * 5. Thread synchronization
+ * 6. ExecutionContext handling
+ * 7. Exception propagation
+ * 
+ * Features implemented:
+ * - Task creation and completion
+ * - Continuation chaining
+ * - WhenAll functionality
+ * - Delay operations
+ * - Custom thread pool
+ * - AsyncLocal value propagation
+ * - Task iteration
+ */
+
+using System;
+using System.Collections.Concurrent;
 using System.Runtime.CompilerServices;
 using System.Runtime.ExceptionServices;
+using System.Threading;
+using System.Threading.Tasks;
 
 // ------------------------------------------------------------
 AsyncLocal<int> myValue = new();

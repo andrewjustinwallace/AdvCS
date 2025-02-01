@@ -1,4 +1,24 @@
-﻿using System;
+﻿/*
+ * This program demonstrates the use of C# Records, a feature introduced in C# 9.0.
+ * It implements a simple order management system to showcase how records can be used
+ * for creating immutable data models with built-in value equality.
+ * 
+ * Key concepts demonstrated:
+ * 1. Record declarations with positional and standard syntax
+ * 2. Immutable collections (ImmutableList<T>)
+ * 3. Non-destructive mutation with 'with' expressions
+ * 4. Value-based equality
+ * 5. Built-in toString implementation
+ * 6. Pattern matching with records
+ * 
+ * The example includes:
+ * - Product, OrderItem, Order, and OrderStatus records
+ * - OrderService class demonstrating record manipulation
+ * - Exception handling for business logic
+ * - LINQ operations with records
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;

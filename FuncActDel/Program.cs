@@ -1,4 +1,29 @@
-﻿public class DelegateExample
+/*
+ * This program demonstrates the use of Func and Action delegates in C#.
+ * It shows how these built-in delegate types can be used to create more flexible
+ * and reusable code by passing methods as parameters.
+ *
+ * Key concepts demonstrated:
+ * 1. Func<T, TResult> - delegates that return a value
+ *    - Takes input parameters and returns a result
+ *    - Last type parameter is always the return type
+ * 
+ * 2. Action<T> - delegates that don't return a value
+ *    - Takes input parameters but returns void
+ *    - Used for performing operations with side effects
+ *
+ * 3. Lambda Expressions
+ *    - Inline method definitions
+ *    - Both statement and expression lambdas
+ *
+ * Common use cases:
+ * - Callback methods
+ * - LINQ operations
+ * - Event handlers
+ * - Strategy pattern implementation
+ */
+
+public class DelegateExample
 {
     // Method that takes a Func<int, int, int> delegate
     public static int PerformOperation(int a, int b, Func<int, int, int> operation)

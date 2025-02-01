@@ -1,4 +1,22 @@
-﻿
+﻿/*
+ * This program demonstrates a simple validation system using delegates in C#.
+ * It implements a flexible validation framework that can chain multiple
+ * validation rules together using delegates.
+ * 
+ * Key concepts demonstrated:
+ * 1. Custom delegate definition (ValidationDelegate)
+ * 2. Delegate list management
+ * 3. Lambda expressions for validation rules
+ * 4. LINQ All() method for validation chaining
+ * 5. Password validation example
+ * 
+ * The example shows:
+ * - Creating a custom validation delegate
+ * - Adding multiple validation rules
+ * - Using lambda expressions for validation logic
+ * - Chaining validation rules together
+ * - Simple password validation implementation
+ */
 
 public delegate bool ValidationDelegate(string input);
 

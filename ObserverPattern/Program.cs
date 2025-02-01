@@ -1,4 +1,32 @@
-﻿using System;
+/*
+ * This program demonstrates two implementations of the Observer pattern in C#:
+ * 1. Traditional event-based implementation using C#'s built-in event system
+ * 2. Modern implementation using IObservable<T> and IObserver<T> interfaces
+ * 
+ * The example uses a weather station scenario where:
+ * - Weather stations (Subjects) publish weather data
+ * - Display units (Observers) subscribe to receive updates
+ * 
+ * Key concepts demonstrated:
+ * 1. Traditional Event Pattern:
+ *    - EventHandler<T> delegate
+ *    - Event declaration and raising
+ *    - Event subscription and handling
+ * 
+ * 2. IObservable Pattern:
+ *    - IObservable<T> interface implementation
+ *    - IObserver<T> interface implementation
+ *    - Subscription management with IDisposable
+ *    - Observer notification (OnNext, OnError, OnCompleted)
+ * 
+ * Pattern benefits:
+ * - Loose coupling between subjects and observers
+ * - Support for multiple observers
+ * - Dynamic subscription/unsubscription
+ * - Clean separation of concerns
+ */
+
+using System;
 using System.Collections.Generic;
 
 // Weather data

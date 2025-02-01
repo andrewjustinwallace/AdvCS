@@ -1,4 +1,23 @@
-﻿using System;
+/*
+ * This program demonstrates the use of multicast delegates in C#.
+ * Multicast delegates allow multiple methods to be chained together
+ * and executed in sequence when the delegate is invoked.
+ * 
+ * Key concepts demonstrated:
+ * 1. Custom delegate definition (LogDel)
+ * 2. Delegate instantiation with method references
+ * 3. Delegate combination using the '+' operator
+ * 4. Multicast delegate invocation
+ * 5. Delegate parameter passing
+ * 
+ * The example shows:
+ * - Creating multiple delegate instances
+ * - Combining delegates into a multicast delegate
+ * - Passing delegates as method parameters
+ * - Different logging format methods being called through the same delegate chain
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
