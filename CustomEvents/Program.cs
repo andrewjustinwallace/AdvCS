@@ -35,7 +35,7 @@
  *    - Components are loosely coupled through event pattern
  * 
  * Usage:
- * - Creates a Counter with a threshold of 111
+ * - Creates a Counter with a threshold of 3
  * - User presses 'a' to increment counter
  * - When threshold is reached, event is raised with threshold value and timestamp
  * - Program exits when threshold is reached
