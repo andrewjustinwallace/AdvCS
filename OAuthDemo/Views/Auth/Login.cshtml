@@ -1,0 +1,46 @@
+@model List<OAuthDemo.Models.AuthenticationProvider>
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-5">
+        <div class="card">
+            <div class="card-header text-center">
+                <h4><i class="fas fa-sign-in-alt"></i> Sign In</h4>
+                <p class="mb-0 text-muted">Choose your preferred provider</p>
+            </div>
+            <div class="card-body">
+                @foreach (var provider in Model)
+                {
+                    <form asp-action="ExternalLogin" method="post" class="mb-3">
+                        <input type="hidden" name="provider" value="@provider.Name" />
+                        <button type="submit" class="btn btn-outline-primary w-100 d-flex align-items-center justify-content-center">
+                            <i class="@provider.Icon me-2"></i>
+                            Continue with @provider.DisplayName
+                        </button>
+                    </form>
+                }
+                
+                <hr>
+                <div class="text-center">
+                    <small class="text-muted">
+                        By signing in, you agree to our terms of service.
+                    </small>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-4">
+            <div class="alert alert-info">
+                <h6><i class="fas fa-info-circle"></i> OAuth Demo Features</h6>
+                <ul class="mb-0 small">
+                    <li>Claims-based authentication</li>
+                    <li>Multiple provider support</li>
+                    <li>Secure cookie storage</li>
+                    <li>External profile integration</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

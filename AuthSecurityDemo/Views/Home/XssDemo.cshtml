@@ -1,0 +1,141 @@
+@{
+    ViewData["Title"] = "XSS Prevention Demo";
+}
+
+<div class="row">
+    <div class="col-md-8">
+        <h2>Cross-Site Scripting (XSS) Prevention Demo</h2>
+        
+        <div class="alert alert-warning">
+            <strong>Educational Purpose:</strong> This page demonstrates XSS vulnerabilities and how to prevent them.
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5>Reflected XSS Prevention</h5>
+            </div>
+            <div class="card-body">
+                <p>Try entering some HTML/JavaScript to see how it's handled safely:</p>
+                
+                <form method="post" asp-action="XssDemo">
+                    @Html.AntiForgeryToken()
+                    <div class="mb-3">
+                        <label class="form-label">User Input:</label>
+                        <input type="text" name="userInput" class="form-control" 
+                               placeholder="Try: &lt;script&gt;alert('XSS')&lt;/script&gt;" />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+
+                @if (ViewBag.SafeOutput != null)
+                {
+                    <div class="mt-3">
+                        <div class="alert alert-success">
+                            <strong>✅ SAFE Output (HTML Encoded):</strong><br />
+                            @ViewBag.SafeOutput
+                        </div>
+                        
+                        <div class="alert alert-info">
+                            <strong>Raw HTML Source:</strong><br />
+                            <code>@Html.Encode(ViewBag.SafeOutput)</code>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5>DOM-based XSS Prevention</h5>
+            </div>
+            <div class="card-body">
+                <p>JavaScript safely handles user input:</p>
+                
+                <input type="text" id="domInput" class="form-control mb-2" 
+                       placeholder="Enter text to display" />
+                <button onclick="updateContent()" class="btn btn-secondary">Update Content</button>
+                
+                <div id="safeContent" class="mt-3 p-2 border"></div>
+                
+                <script>
+                    function updateContent() {
+                        var input = document.getElementById('domInput').value;
+                        var output = document.getElementById('safeContent');
+                        
+                        // ✅ SAFE: Using textContent instead of innerHTML
+                        output.textContent = 'Safe output: ' + input;
+                        
+                        // ❌ DANGEROUS: This would be vulnerable to DOM XSS
+                        // output.innerHTML = 'Dangerous output: ' + input;
+                    }
+                </script>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h5>Stored XSS Prevention</h5>
+            </div>
+            <div class="card-body">
+                <p>Comments are HTML-encoded before being stored in the database. Check the comments section on the home page.</p>
+                <p>The <code>UserService.AddCommentAsync</code> method uses <code>HtmlEncode</code> to prevent stored XSS attacks.</p>
+                
+                <div class="alert alert-info">
+                    <strong>Implementation:</strong><br />
+                    <code>var sanitizedContent = System.Web.HttpUtility.HtmlEncode(content);</code>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h5>XSS Prevention Techniques Used</h5>
+            </div>
+            <div class="card-body">
+                <h6>1. HTML Encoding</h6>
+                <ul>
+                    <li>All user input is HTML encoded</li>
+                    <li>Converts &lt; &gt; to &amp;lt; &amp;gt;</li>
+                    <li>Prevents script execution</li>
+                </ul>
+                
+                <h6>2. Content Security Policy (CSP)</h6>
+                <ul>
+                    <li>Restricts script sources</li>
+                    <li>Prevents inline script execution</li>
+                    <li>Set in _Layout.cshtml</li>
+                </ul>
+                
+                <h6>3. Security Headers</h6>
+                <ul>
+                    <li>X-XSS-Protection</li>
+                    <li>X-Content-Type-Options</li>
+                    <li>X-Frame-Options</li>
+                </ul>
+                
+                <h6>4. Input Validation</h6>
+                <ul>
+                    <li>Model validation attributes</li>
+                    <li>Length restrictions</li>
+                    <li>Type validation</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="card mt-3">
+            <div class="card-header">
+                <h5>CSRF Protection</h5>
+            </div>
+            <div class="card-body">
+                <p>All forms use anti-forgery tokens:</p>
+                <ul>
+                    <li><code>@@Html.AntiForgeryToken()</code> in forms</li>
+                    <li><code>[ValidateAntiForgeryToken]</code> on actions</li>
+                    <li>Automatic validation enabled globally</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

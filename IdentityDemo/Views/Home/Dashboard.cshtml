@@ -1,0 +1,61 @@
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<h2>Dashboard</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5>User Information</h5>
+            </div>
+            <div class="card-body">
+                <p><strong>Name:</strong> @User.Identity.Name</p>
+                <p><strong>Authenticated:</strong> @User.Identity.IsAuthenticated</p>
+                <p><strong>Authentication Type:</strong> @User.Identity.AuthenticationType</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5>Claims</h5>
+            </div>
+            <div class="card-body">
+                @if (ViewBag.Claims != null)
+                {
+                    <ul class="list-group list-group-flush">
+                        @foreach (var claim in ViewBag.Claims)
+                        {
+                            <li class="list-group-item">
+                                <strong>@claim.Type:</strong> @claim.Value
+                            </li>
+                        }
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5>Available Actions</h5>
+            </div>
+            <div class="card-body">
+                <a asp-controller="Account" asp-action="Profile" class="btn btn-primary">View Profile</a>
+                
+                @if (User.IsInRole("Admin"))
+                {
+                    <a asp-controller="Home" asp-action="AdminOnly" class="btn btn-danger">Admin Area</a>
+                }
+                
+                <a asp-controller="Home" asp-action="AdultContent" class="btn btn-warning">18+ Content</a>
+            </div>
+        </div>
+    </div>
+</div>

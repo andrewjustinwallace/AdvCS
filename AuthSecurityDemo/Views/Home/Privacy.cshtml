@@ -1,0 +1,22 @@
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>This is a demo application for educational purposes showing authentication and security features in ASP.NET Core.</p>
+
+<h3>Data Collection</h3>
+<p>This demo application collects:</p>
+<ul>
+    <li>Email addresses for user accounts</li>
+    <li>Names and age for demonstration purposes</li>
+    <li>Comments posted by users</li>
+</ul>
+
+<h3>Security Measures</h3>
+<ul>
+    <li>Passwords are hashed using BCrypt</li>
+    <li>JWT tokens are used for authentication</li>
+    <li>All user input is HTML encoded to prevent XSS</li>
+    <li>CSRF protection is enabled on all forms</li>
+</ul>

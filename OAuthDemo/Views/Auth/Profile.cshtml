@@ -1,0 +1,86 @@
+@model OAuthDemo.Models.UserProfile
+@{
+    ViewData["Title"] = "Profile";
+}
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h4><i class="fas fa-user-circle"></i> User Profile</h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    @if (!string.IsNullOrEmpty(Model.Picture))
+                    {
+                        <div class="col-md-3 text-center">
+                            <img src="@Model.Picture" alt="Profile Picture" class="img-fluid rounded-circle mb-3" style="max-width: 120px;">
+                        </div>
+                    }
+                    <div class="col-md-9">
+                        <dl class="row">
+                            <dt class="col-sm-4">Provider:</dt>
+                            <dd class="col-sm-8">
+                                <span class="badge bg-primary">@Model.Provider</span>
+                            </dd>
+                            
+                            <dt class="col-sm-4">Name:</dt>
+                            <dd class="col-sm-8">@Model.Name</dd>
+                            
+                            <dt class="col-sm-4">Email:</dt>
+                            <dd class="col-sm-8">
+                                @Model.Email
+                                @if (Model.EmailVerified)
+                                {
+                                    <i class="fas fa-check-circle text-success" title="Verified"></i>
+                                }
+                            </dd>
+                            
+                            <dt class="col-sm-4">User ID:</dt>
+                            <dd class="col-sm-8"><code>@Model.Id</code></dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card mt-3">
+            <div class="card-header">
+                <h5><i class="fas fa-tags"></i> All Claims</h5>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th>Claim Type</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var claim in Model.Claims.OrderBy(c => c.Type))
+                            {
+                                <tr>
+                                    <td><code>@claim.Type</code></td>
+                                    <td>@claim.Value</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h6><i class="fas fa-info-circle"></i> OAuth Info</h6>
+            </div>
+            <div class="card-body">
+                <p class="small">Claims are provided by <strong>@Model.Provider</strong> and automatically mapped to your application identity.</p>
+                <p class="small">These claims persist in your session cookie until logout.</p>
+            </div>
+        </div>
+    </div>
+</div>

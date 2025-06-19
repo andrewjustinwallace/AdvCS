@@ -1,0 +1,128 @@
+@{
+
+    ViewData["Title"] = "Profile";
+}
+
+<h2>User Profile</h2>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h5>Your Information</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p><strong>User ID:</strong> @Model.UserId</p>
+                        <p><strong>Email:</strong> @Model.Email</p>
+                        <p><strong>Name:</strong> @Model.Name</p>
+                        <p><strong>Age:</strong> @Model.Age years old</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><strong>Roles:</strong></p>
+                        @if (Model.Roles != null)
+                        {
+                            <ul>
+                                @foreach (string role in Model.Roles)
+                                {
+                                    <li><span class="badge bg-primary">@role</span></li>
+                                }
+                            </ul>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card mt-4">
+            <div class="card-header">
+                <h5>Your JWT Claims</h5>
+            </div>
+            <div class="card-body">
+                <p>These are the claims extracted from your JWT token:</p>
+                <div class="table-responsive">
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th>Claim Type</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var claim in User.Claims)
+                            {
+                                <tr>
+                                    <td><code>@claim.Type</code></td>
+                                    <td>@claim.Value</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h5>Access Levels</h5>
+            </div>
+            <div class="card-body">
+                <p>Based on your roles and claims, you can access:</p>
+                
+                <ul class="list-unstyled">
+                    <li>✅ Basic authenticated content</li>
+                    
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li>✅ <a asp-controller="Home" asp-action="AdminPanel">Admin Panel</a></li>
+                    }
+                    else
+                    {
+                        <li>❌ Admin Panel (Admin role required)</li>
+                    }
+                    
+                    @if (User.IsInRole("Manager") || User.IsInRole("Admin"))
+                    {
+                        <li>✅ <a asp-controller="Home" asp-action="ManagerArea">Manager Area</a></li>
+                    }
+                    else
+                    {
+                        <li>❌ Manager Area (Manager/Admin role required)</li>
+                    }
+                    
+                    @{
+                        var ageClaimValue = User.FindFirst("age")?.Value;
+                        var isAdult = int.TryParse(ageClaimValue, out int age) && age >= 18;
+                    }
+                    
+                    @if (isAdult)
+                    {
+                        <li>✅ <a asp-controller="Home" asp-action="RestrictedContent">Age Restricted Content</a></li>
+                    }
+                    else
+                    {
+                        <li>❌ Age Restricted Content (18+ required)</li>
+                    }
+                </ul>
+            </div>
+        </div>
+        
+        <div class="card mt-3">
+            <div class="card-header">
+                <h5>JWT Token Info</h5>
+            </div>
+            <div class="card-body">
+                <p class="small">Your JWT token contains all the information above as claims. The token is:</p>
+                <ul class="small">
+                    <li>Stored in an HTTP-only cookie</li>
+                    <li>Digitally signed to prevent tampering</li>
+                    <li>Contains expiration information</li>
+                    <li>Used for authorization on each request</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

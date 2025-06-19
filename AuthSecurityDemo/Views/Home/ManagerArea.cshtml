@@ -1,0 +1,55 @@
+@{
+    ViewData["Title"] = "Manager Area";
+}
+
+<h2>Manager Area</h2>
+
+<div class="alert alert-warning">
+    <strong>🔒 Manager or Admin Only:</strong> This page requires "Manager" or "Admin" role.
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h5>Manager Dashboard</h5>
+            </div>
+            <div class="card-body">
+                <p>Welcome to the manager area! This demonstrates multiple role authorization.</p>
+                
+                <h6>Your Current Claims:</h6>
+                <ul>
+                    @foreach (var claim in User.Claims)
+                    {
+                        <li><strong>@claim.Type:</strong> @claim.Value</li>
+                    }
+                </ul>
+                
+                <h6>Your Roles:</h6>
+                <ul>
+                    @foreach (var role in User.FindAll(System.Security.Claims.ClaimTypes.Role))
+                    {
+                        <li><span class="badge bg-primary">@role.Value</span></li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h5>Authorization Policy</h5>
+            </div>
+            <div class="card-body">
+                <p>This page uses:</p>
+                <code>[Authorize(Policy = "ManagerOrAdmin")]</code>
+                
+                <p class="mt-3">Policy definition:</p>
+                <code>policy.RequireRole("Manager", "Admin")</code>
+                
+                <p class="mt-3">Users with either the "Manager" OR "Admin" role can access this page.</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+@{
+    ViewData["Title"] = "Admin Only";
+}
+
+<div class="alert alert-danger">
+    <h4>🔒 Admin Only Area</h4>
+    <p>This page is only accessible to users with the "Admin" role.</p>
+    <p>Current user roles: @string.Join(", ", User.FindAll(System.Security.Claims.ClaimTypes.Role).Select(c => c.Value))</p>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h5>Admin Functions</h5>
+    </div>
+    <div class="card-body">
+        <p>Here you would typically have admin-only functionality like:</p>
+        <ul>
+            <li>User management</li>
+            <li>System configuration</li>
+            <li>Reports and analytics</li>
+            <li>Role and permission management</li>
+        </ul>
+    </div>
+</div>

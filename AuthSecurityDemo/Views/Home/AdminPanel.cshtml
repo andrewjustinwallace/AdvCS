@@ -1,0 +1,84 @@
+@model List<AuthSecurityDemo.Models.User>
+
+@{
+    ViewData["Title"] = "Admin Panel";
+}
+
+<h2>Admin Panel</h2>
+
+<div class="alert alert-info">
+    <strong>🔒 Admin Only:</strong> This page is only accessible to users with the "Admin" role.
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h5>All Users</h5>
+    </div>
+    <div class="card-body">
+        @if (Model.Any())
+        {
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Email</th>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Created</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var user in Model)
+                        {
+                            <tr>
+                                <td>@user.Id</td>
+                                <td>@user.Email</td>
+                                <td>@user.FirstName @user.LastName</td>
+                                <td>@user.Age</td>
+                                <td>@user.CreatedAt.ToString("MM/dd/yyyy")</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+        else
+        {
+            <p class="text-muted">No users found.</p>
+        }
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5>Authorization Demo</h5>
+            </div>
+            <div class="card-body">
+                <p>This page demonstrates:</p>
+                <ul>
+                    <li><strong>Role-based Authorization:</strong> <code>[Authorize(Policy = "AdminOnly")]</code></li>
+                    <li><strong>Policy Configuration:</strong> <code>policy.RequireRole("Admin")</code></li>
+                    <li><strong>Claims Verification:</strong> JWT token contains role claims</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5>Security Features</h5>
+            </div>
+            <div class="card-body">
+                <ul>
+                    <li>✅ CSRF protection with anti-forgery tokens</li>
+                    <li>✅ XSS prevention with HTML encoding</li>
+                    <li>✅ Secure JWT token validation</li>
+                    <li>✅ Role-based access control</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

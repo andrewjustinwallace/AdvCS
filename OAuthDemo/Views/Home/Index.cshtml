@@ -1,0 +1,29 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">OAuth Authentication Demo</h1>
+    <p>This project demonstrates OAuth 2.0 authentication with external providers.</p>
+    
+    @if (!User.Identity.IsAuthenticated)
+    {
+        <div class="mt-4">
+            <div class="card mx-auto" style="max-width: 400px;">
+                <div class="card-body">
+                    <h5 class="card-title">Welcome!</h5>
+                    <p class="card-text">Sign in with your preferred provider to explore OAuth claims.</p>
+                    <a asp-controller="Auth" asp-action="Login" class="btn btn-primary">Sign In</a>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-success">
+            <h4>Welcome back!</h4>
+            <p>You are authenticated via <strong>@User.FindFirst("provider")?.Value</strong></p>
+            <a asp-controller="Home" asp-action="Dashboard" class="btn btn-primary">View Dashboard</a>
+        </div>
+    }
+</div>

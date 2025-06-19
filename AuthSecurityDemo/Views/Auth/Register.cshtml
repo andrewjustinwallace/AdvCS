@@ -1,0 +1,81 @@
+@model AuthSecurityDemo.Models.RegisterModel
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h4>Register</h4>
+            </div>
+            <div class="card-body">
+                <form asp-action="Register" method="post">
+                    @Html.AntiForgeryToken()
+                    
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    
+                    <div class="mb-3">
+                        <label asp-for="Email" class="form-label"></label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label asp-for="Password" class="form-label"></label>
+                        <input asp-for="Password" type="password" class="form-control" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                        <div class="form-text">Password must be at least 6 characters long.</div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="FirstName" class="form-label"></label>
+                                <input asp-for="FirstName" class="form-control" />
+                                <span asp-validation-for="FirstName" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="LastName" class="form-label"></label>
+                                <input asp-for="LastName" class="form-control" />
+                                <span asp-validation-for="LastName" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label asp-for="Age" class="form-label"></label>
+                        <input asp-for="Age" type="number" min="13" max="120" class="form-control" />
+                        <span asp-validation-for="Age" class="text-danger"></span>
+                        <div class="form-text">Age is used for demonstrating claims-based authorization (18+ content).</div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Register</button>
+                    <a asp-action="Login" class="btn btn-link">Already have an account? Login</a>
+                </form>
+            </div>
+        </div>
+        
+        <div class="card mt-4">
+            <div class="card-header">
+                <h5>Registration Features</h5>
+            </div>
+            <div class="card-body">
+                <ul>
+                    <li><strong>Password Hashing:</strong> Passwords are hashed with BCrypt before storage</li>
+                    <li><strong>Default Role:</strong> New users automatically get the "User" role</li>
+                    <li><strong>Claims Creation:</strong> User information becomes JWT claims</li>
+                    <li><strong>Input Validation:</strong> Both client and server-side validation</li>
+                    <li><strong>CSRF Protection:</strong> Anti-forgery tokens prevent CSRF attacks</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

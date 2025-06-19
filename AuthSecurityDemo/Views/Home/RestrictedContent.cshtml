@@ -1,0 +1,53 @@
+@{
+    ViewData["Title"] = "Age Restricted Content";
+}
+
+<h2>Age Restricted Content</h2>
+
+<div class="alert alert-success">
+    <strong>🔒 Age Verification Passed:</strong> You are 18 or older and can access this content.
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h5>Restricted Content Area</h5>
+            </div>
+            <div class="card-body">
+                <p>This page demonstrates claims-based authorization using custom claims.</p>
+                
+                <h6>Your Age Claim:</h6>
+                <p><strong>Age:</strong> @User.FindFirst("age")?.Value years old</p>
+                
+                <div class="alert alert-info">
+                    <strong>Policy Requirements:</strong> This page requires an "age" claim with a value of 18 or higher.
+                </div>
+                
+                <h6>Implementation Details:</h6>
+                <ul>
+                    <li><strong>Authorization Attribute:</strong> <code>[Authorize(Policy = "MinimumAge18")]</code></li>
+                    <li><strong>Policy Definition:</strong> <code>policy.RequireClaim("age", "18", "19", "20", ...)</code></li>
+                    <li><strong>Claim Source:</strong> Age is stored in JWT token during login</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h5>Your Claims</h5>
+            </div>
+            <div class="card-body">
+                @foreach (var claim in User.Claims)
+                {
+                    <div class="mb-2">
+                        <strong>@claim.Type:</strong><br />
+                        <span class="text-muted">@claim.Value</span>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

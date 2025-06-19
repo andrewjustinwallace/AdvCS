@@ -1,0 +1,125 @@
+@model List<AuthSecurityDemo.Models.Comment>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="text-center">
+            <h1 class="display-4">Auth & Security Demo</h1>
+            <p>Learn about JWT authentication, claims-based authorization, and XSS/CSRF prevention in ASP.NET Core.</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Authentication Features</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li><strong>JWT Tokens:</strong> JSON Web Token authentication</li>
+                            <li><strong>Claims-based Authorization:</strong> Role and policy-based access</li>
+                            <li><strong>Custom User Store:</strong> Using Dapper instead of Entity Framework</li>
+                            <li><strong>Password Hashing:</strong> BCrypt for secure password storage</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Security Features</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li><strong>XSS Prevention:</strong> HTML encoding, CSP headers</li>
+                            <li><strong>CSRF Protection:</strong> Anti-forgery tokens</li>
+                            <li><strong>Secure Cookies:</strong> HttpOnly, Secure, SameSite</li>
+                            <li><strong>Input Validation:</strong> Model validation and sanitization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h5>User Comments</h5>
+            </div>
+            <div class="card-body">
+                @if (User.Identity?.IsAuthenticated == true)
+                {
+                    <form asp-action="AddComment" method="post" class="mb-3">
+                        @Html.AntiForgeryToken()
+                        <div class="mb-2">
+                            <textarea name="Content" class="form-control" rows="3" placeholder="Write a comment..." maxlength="1000" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-sm">Add Comment</button>
+                    </form>
+                }
+                else
+                {
+                    <p class="text-muted">Please <a asp-controller="Auth" asp-action="Login">login</a> to add comments.</p>
+                }
+                
+                <div class="comments-list" style="max-height: 400px; overflow-y: auto;">
+                    @if (Model.Any())
+                    {
+                        @foreach (var comment in Model)
+                        {
+                            <div class="border-bottom mb-2 pb-2">
+                                <small class="text-muted">@comment.UserName - @comment.CreatedAt.ToString("MMM dd, yyyy")</small>
+                                <div>
+                                    @* Content is already HTML encoded when stored, so display as-is *@
+                                    @Html.Raw(comment.Content)
+                                </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <p class="text-muted">No comments yet.</p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5>API Endpoints (for testing with Postman/curl)</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>Public Endpoints:</h6>
+                        <ul class="list-unstyled">
+                            <li><code>POST /api/api/login</code> - Login and get JWT token</li>
+                            <li><code>POST /api/api/register</code> - Register new user</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>Protected Endpoints:</h6>
+                        <ul class="list-unstyled">
+                            <li><code>GET /api/api/profile</code> - Get user profile (requires auth)</li>
+                            <li><code>GET /api/api/comments</code> - Get comments (requires auth)</li>
+                            <li><code>GET /api/api/users</code> - Get all users (Admin only)</li>
+                            <li><code>GET /api/api/restricted</code> - Age restricted content (18+)</li>
+                            <li><code>GET /api/api/claims-demo</code> - Show all claims</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="alert alert-info">
+                    <strong>Authorization Header:</strong> <code>Bearer &lt;your-jwt-token&gt;</code>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
