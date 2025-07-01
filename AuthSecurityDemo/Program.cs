@@ -20,7 +20,7 @@ builder.Services.AddControllersWithViews(options =>
 var connectionString = builder.Configuration.GetConnectionString("SqlServerLocal") ;
 builder.Services.AddScoped<IDbConnection>(provider =>
 {
-    if (connectionString.Contains("Data Source=") && connectionString.Contains(".db"))
+    if (connectionString!.Contains("Data Source=") && connectionString.Contains(".db"))
     {
         return new SqliteConnection(connectionString);
     }
@@ -124,7 +124,7 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 // Initialize database tables
-await InitializeDatabase(app, connectionString);
+//await InitializeDatabase(app, connectionString);
 
 app.Run();
 
